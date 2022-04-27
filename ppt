@@ -1,0 +1,53 @@
+import random
+
+
+class Jugador:
+    nombre = input ("¿Quien eres? \n" )
+    print ("Tu eres: " + nombre)
+
+
+while True:
+
+    aleatorio = random.randrange(1,3)
+     
+    print("Elije:\n" "1.Piedra\n" "2.Papel\n" "3.Tijeras\n")
+    escoge = int(input("Elije:"))
+
+    if escoge == 1:
+         eleccionJ = "Piedra"
+    elif escoge == 2:
+         eleccionJ ="Papel"
+    elif escoge == 3:
+         eleccionJ ="Tijeras"
+    print("Elejiste:", eleccionJ)
+
+    if  aleatorio == 1:
+         eleccionIA = "Piedra"
+    elif  aleatorio == 2:
+         eleccionIA = "Papel"
+    elif  aleatorio == 3:
+         eleccionIA = "Tijeras"
+    print("Oponente eligio:", eleccionIA)
+    print("...")
+
+    if eleccionJ == "Piedra" and eleccionIA == "Papel":
+         print("Perdiste")
+    elif eleccionJ == "Piedra" and eleccionIA == "Tijeras":
+         print("Ganaste")
+    
+    elif eleccionJ == "Papel" and eleccionIA == "Piedra":
+         print("Ganaste")
+    elif eleccionJ == "Papel" and eleccionIA == "Tijeras":
+         print("Perdiste")
+    
+    elif eleccionJ == "Tijeras" and eleccionIA == "Papel":
+         print("Ganaste")
+    elif eleccionJ == "Tijeras" and eleccionIA == "Piedra":
+         print("Perdiste")
+    
+    elif eleccionJ ==  eleccionIA:
+         print("Empate")
+
+    play_again = input("¿Quieres jugar de nuevo?\n""¿SI?(s) ¿NO?(x)\n")
+    if play_again.lower() != "s":
+        break
